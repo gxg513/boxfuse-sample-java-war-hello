@@ -9,6 +9,6 @@ RUN mvn -f /home/app/pom.xml clean package
 #
 # Package stage
 #
-#FROM tomcat
-#COPY --from=build /home/app/target/*.jar /usr/local/tomcat/webapps/
-#EXPOSE 8080
+FROM tomcat
+COPY --from=build /home/app/target/*.jar /usr/local/tomcat/webapps/
+EXPOSE 8080
